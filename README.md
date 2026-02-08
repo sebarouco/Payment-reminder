@@ -2,6 +2,8 @@
 
 A comprehensive payment reminder system built with FastAPI backend and Next.js frontend that automatically sends email reminders to clients for their installment payments.
 
+https://www.youtube.com/watch?v=YKClQqGr1h0
+
 ## Features
 
 ### Backend (FastAPI)
