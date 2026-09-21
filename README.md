@@ -1,41 +1,41 @@
 # Payment Reminder Application
 
-Una aplicación completa para gestionar pagos y recordatorios automáticos, basada en los diseños proporcionados. Esta aplicación incluye un backend robusto en C# con ASP.NET Core y un frontend moderno en Next.js con TypeScript.
+A complete application for managing payments and automatic reminders, based on provided designs. This application includes a robust C# backend with ASP.NET Core and a modern Next.js frontend with TypeScript.
 
-## 🚀 Tecnologías
+## 🚀 Technologies
 
 ### Backend (C# / ASP.NET Core)
-- **ASP.NET Core 10** - Framework web moderno
-- **Entity Framework Core** - ORM para base de datos
-- **SQLite** - Base de datos ligera
-- **JWT Authentication** - Sistema de autenticación seguro
-- **Hangfire** - Sistema de jobs programados
-- **SignalR** - Notificaciones en tiempo real
-- **Microsoft.AspNetCore.Authentication.JwtBearer** - Autenticación JWT
-- **System.IdentityModel.Tokens.Jwt** - Manejo de tokens JWT
+- **ASP.NET Core 10** - Modern web framework
+- **Entity Framework Core** - ORM for database
+- **SQLite** - Lightweight database
+- **JWT Authentication** - Secure authentication system
+- **Hangfire** - Job scheduling system
+- **SignalR** - Real-time notifications
+- **Microsoft.AspNetCore.Authentication.JwtBearer** - JWT authentication
+- **System.IdentityModel.Tokens.Jwt** - JWT token handling
 
 ### Frontend (Next.js/React)
-- **Next.js 16** - Framework React moderno
-- **TypeScript** - Tipado estático
-- **Tailwind CSS** - Estilos responsive
-- **Axios** - Cliente HTTP
-- **SignalR** - Notificaciones en tiempo real
-- **Lucide React** - Iconos modernos
-- **date-fns** - Manejo de fechas
+- **Next.js 16** - Modern React framework
+- **TypeScript** - Static typing
+- **Tailwind CSS** - Responsive styling
+- **Axios** - HTTP client
+- **SignalR** - Real-time notifications
+- **Lucide React** - Modern icons
+- **date-fns** - Date handling
 
-## 📋 Características
+## 📋 Features
 
-- ✅ Sistema de autenticación con JWT
-- ✅ Gestión completa de pagos (CRUD)
-- ✅ Sistema de prioridades (Urgent, High, Medium, Low)
-- ✅ Estados de pago (Pending, Paid, Overdue, etc.)
-- ✅ Recordatorios automáticos por email
-- ✅ Dashboard con estadísticas en tiempo real
-- ✅ Filtros por estado de pago
-- ✅ Diseño responsive y moderno
-- ✅ Notificaciones en tiempo real
+- ✅ JWT authentication system
+- ✅ Complete payment management (CRUD)
+- ✅ Priority system (Urgent, High, Medium, Low)
+- ✅ Payment status tracking (Pending, Paid, Overdue, etc.)
+- ✅ Automatic email reminders
+- ✅ Dashboard with real-time statistics
+- ✅ Payment status filters
+- ✅ Responsive and modern design
+- ✅ Real-time notifications
 
-## 🛠️ Instalación
+## 🛠️ Installation
 
 ### Backend (C#)
 ```bash
@@ -45,12 +45,12 @@ dotnet build
 dotnet run
 ```
 
-El backend se ejecutará en `http://localhost:5122`
+The backend will run on `http://localhost:5122`
 
-**Modo Demo:** El backend incluye un modo demo con usuario pre-configurado:
-- Usuario: `demo`
-- Contraseña: `demo123`
-- Incluye 4 pagos de demostración pre-configurados
+**Demo Mode:** The backend includes a demo mode with pre-configured user:
+- Username: `demo`
+- Password: `demo123`
+- Includes 4 pre-configured demo payments
 
 ### Frontend
 ```bash
@@ -59,11 +59,11 @@ npm install
 npm run dev
 ```
 
-El frontend se ejecutará en `http://localhost:3000`
+The frontend will run on `http://localhost:3000`
 
-## 🔧 Configuración
+## 🔧 Configuration
 
-### Variables de entorno del Backend (appsettings.json)
+### Backend Environment Variables (appsettings.json)
 ```json
 {
   "JwtSettings": {
@@ -83,115 +83,115 @@ El frontend se ejecutará en `http://localhost:3000`
 }
 ```
 
-### Variables de entorno del Frontend (.env)
+### Frontend Environment Variables (.env)
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:5122/api
 ```
 
-## 📁 Estructura del Proyecto
+## 📁 Project Structure
 
 ```
 Payment Reminder Application/
 ├── Backend/                 # Backend API (C#)
-│   ├── Controllers/        # Controladores API
-│   ├── Models/            # Modelos de datos
-│   ├── Services/          # Lógica de negocio
-│   ├── Data/              # Contexto de base de datos
+│   ├── Controllers/        # API Controllers
+│   ├── Models/            # Data Models
+│   ├── Services/          # Business Logic
+│   ├── Data/              # Database Context
 │   ├── DTOs/              # Data Transfer Objects
 │   ├── Hubs/              # SignalR Hubs
-│   ├── Program.cs         # Punto de entrada
-│   └── appsettings.json   # Configuración
+│   ├── Program.cs         # Entry Point
+│   └── appsettings.json   # Configuration
 ├── frontend/              # Frontend Next.js
 │   ├── src/
-│   │   ├── app/          # Páginas Next.js
-│   │   ├── components/   # Componentes React
-│   │   ├── context/     # Contextos (Auth)
-│   │   └── lib/         # Utilidades y API
+│   │   ├── app/          # Next.js Pages
+│   │   ├── components/   # React Components
+│   │   ├── context/     # Contexts (Auth)
+│   │   └── lib/         # Utilities and API
 │   └── package.json
 └── README.md
 ```
 
 ## 🔗 API Endpoints
 
-### Autenticación
-- `POST /api/auth/register` - Registro de usuarios
-- `POST /api/auth/login` - Login de usuarios
-- `GET /api/auth/me` - Obtener usuario actual
+### Authentication
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `GET /api/auth/me` - Get current user
 
-### Pagos
-- `GET /api/payments` - Obtener todos los pagos del usuario
-- `GET /api/payments/:id` - Obtener un pago específico
-- `POST /api/payments` - Crear nuevo pago
-- `PUT /api/payments/:id` - Actualizar pago
-- `DELETE /api/payments/:id` - Eliminar pago
-- `POST /api/payments/:id/mark-paid` - Marcar pago como realizado
-- `GET /api/payments/overdue` - Obtener pagos vencidos
+### Payments
+- `GET /api/payments` - Get all user payments
+- `GET /api/payments/:id` - Get specific payment
+- `POST /api/payments` - Create new payment
+- `PUT /api/payments/:id` - Update payment
+- `DELETE /api/payments/:id` - Delete payment
+- `POST /api/payments/:id/mark-paid` - Mark payment as paid
+- `GET /api/payments/overdue` - Get overdue payments
 
-## 🎨 Diseño
+## 🎨 Design
 
-La aplicación sigue un diseño moderno con:
-- Colores azul/gris como en las imágenes de referencia
-- Gradientes suaves
-- Tarjetas con sombras
-- Iconos intuitivos
-- Layout responsive
-- Animaciones sutiles
+The application follows a modern design with:
+- Blue/gray colors as in reference images
+- Smooth gradients
+- Cards with shadows
+- Intuitive icons
+- Responsive layout
+- Subtle animations
 
-## 📅 Sistema de Recordatorios
+## 📅 Reminder System
 
-El sistema envía recordatorios automáticos en estos intervalos:
-- 1 semana antes de la fecha de vencimiento
-- 3 días antes de la fecha de vencimiento
-- 1 día antes de la fecha de vencimiento
-- 1 día después de la fecha de vencimiento (si está vencido)
+The system sends automatic reminders at these intervals:
+- 1 week before due date
+- 3 days before due date
+- 1 day before due date
+- 1 day after due date (if overdue)
 
-Los recordatorios se procesan automáticamente con **Hangfire**, un sistema robusto de jobs programados para .NET.
+Reminders are processed automatically with **Hangfire**, a robust job scheduling system for .NET.
 
-## 🔐 Seguridad
+## 🔐 Security
 
-- Contraseñas encriptadas con ASP.NET Core Identity
-- Tokens JWT para autenticación con expiración configurable
-- Validación de datos en ambos lados
-- CORS configurado para el frontend
-- Variables de entorno para datos sensibles
+- Passwords encrypted with ASP.NET Core Identity
+- JWT tokens for authentication with configurable expiration
+- Data validation on both sides
+- CORS configured for frontend
+- Environment variables for sensitive data
 - Role-based authorization (Admin/User)
-- HTTPS configurado para producción
+- HTTPS configured for production
 
-## 🚀 Despliegue
+## 🚀 Deployment
 
 ### Backend (ASP.NET Core)
-Puedes desplegar el backend en servicios como:
-- Azure App Service (recomendado para ASP.NET Core)
+You can deploy the backend on services like:
+- Azure App Service (recommended for ASP.NET Core)
 - AWS App Runner
 - Google Cloud Run
 - Heroku
-- VPS propio con Docker
+- Your own VPS with Docker
 
 ### Frontend
-Puedes desplegar el frontend en:
-- Vercel (recomendado para Next.js)
+You can deploy the frontend on:
+- Vercel (recommended for Next.js)
 - Netlify
 - Azure Static Web Apps
 - AWS Amplify
 
-## 📝 Notas
+## 📝 Notes
 
-- La base de datos SQLite se crea automáticamente en la primera ejecución
-- Los correos electrónicos requieren configuración SMTP real
-- Para producción, cambia el JWT_SECRET y usa variables de entorno seguras
-- El sistema de recordatorios usa Hangfire para jobs programados
-- El modo demo incluye datos pre-configurados para facilitar pruebas
-- La aplicación usa Entity Framework Core para el acceso a datos
+- SQLite database is created automatically on first run
+- Email requires real SMTP configuration
+- For production, change JWT_SECRET and use secure environment variables
+- Reminder system uses Hangfire for scheduled jobs
+- Demo mode includes pre-configured data for easy testing
+- Application uses Entity Framework Core for data access
 
-## 🤝 Contribución
+## 🤝 Contribution
 
-Este proyecto fue creado como una demostración basada en diseños proporcionados. Puedes extenderlo con:
-- Sistema de notificaciones push
-- Exportación de datos a PDF/Excel
-- Integración con pasarelas de pago
-- Dashboard administrativo
-- Sistema de multi-tenant
+This project was created as a demonstration based on provided designs. You can extend it with:
+- Push notification system
+- Data export to PDF/Excel
+- Payment gateway integration
+- Admin dashboard
+- Multi-tenant system
 
-## 📄 Licencia
+## 📄 License
 
-Este proyecto es para fines educativos y demostrativos.
+This project is for educational and demonstration purposes.
